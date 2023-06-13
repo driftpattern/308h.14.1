@@ -11,7 +11,7 @@ function validateRegistration(event) {
     var terms = form.elements.terms.checked;
   
     var errorDisplay = document.getElementById("errorDisplay");
-    errorDisplay.innerHTML = ""; // Clear previous error messages
+    errorDisplay.innerHTML = ""; // clear previous error messages
   
     if (username.length < 3) {
       displayError("Username must be at least 3 characters long.");
@@ -34,7 +34,7 @@ function validateRegistration(event) {
     }
   
     if (errorDisplay.innerHTML === "") {
-      // No errors, submit the form
+      // no errors so submit
       form.submit();
     }
   }
@@ -46,7 +46,7 @@ function validateRegistration(event) {
     var password = form.elements.password.value;
   
     var errorDisplay = document.getElementById("errorDisplay");
-    errorDisplay.innerHTML = ""; // Clear previous error messages
+    errorDisplay.innerHTML = ""; // clear previous errors
   
     if (username === "") {
       displayError("Please enter your username.");
@@ -57,15 +57,16 @@ function validateRegistration(event) {
     }
   
     if (errorDisplay.innerHTML === "") {
-      // No errors, submit the form
+      // no errors so submit
       form.submit();
     }
   }
   
+  // email address can't contain "example.com"
   function validateEmail(email) {
-    // Basic email validation regex
     var emailRegex = /^\S+@\S+\.\S+$/;
-    return emailRegex.test(email);
+    var domainRegex = /example\.com$/i;
+    return emailRegex.test(email) && !domainRegex.test(email);
   }
   
   function displayError(message) {
@@ -75,7 +76,7 @@ function validateRegistration(event) {
     errorDisplay.appendChild(errorMessage);
   }
   
-  // Event listeners for form submissions
+
   document.getElementById("registration").addEventListener("submit", validateRegistration);
   document.getElementById("login").addEventListener("submit", validateLogin);
   
