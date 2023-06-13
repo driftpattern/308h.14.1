@@ -2,6 +2,7 @@
 // ALAB 308H.14.1 - Form Validation
 
 
+// -------------------------------------------------------------
 function validateRegistration(event) {
   event.preventDefault();
   var form = document.getElementById("registration");
@@ -42,7 +43,7 @@ function validateRegistration(event) {
 
 
 
-
+// -------------------------------------------------------------
 function validateLogin(event) {
   event.preventDefault();
   var form = document.getElementById("login");
@@ -72,6 +73,7 @@ function validateLogin(event) {
 
 
 
+// -------------------------------------------------------------
 // three validators (username, pw and email)
 function validateUsername(username) {
   // username validation here
@@ -96,7 +98,7 @@ function validateEmail(email) {
 
 
 
-
+// -------------------------------------------------------------
 function displayError(message) {
   var errorDisplay = document.getElementById("errorDisplay");
   var errorMessage = document.createElement("p");
