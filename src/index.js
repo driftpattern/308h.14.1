@@ -34,7 +34,6 @@ function validateRegistration(event) {
     }
   
     if (errorDisplay.innerHTML === "") {
-      // no errors so submit
       form.submit();
     }
   }
@@ -57,7 +56,6 @@ function validateRegistration(event) {
     }
   
     if (errorDisplay.innerHTML === "") {
-      // no errors so submit
       form.submit();
     }
   }
