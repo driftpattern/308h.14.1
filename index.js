@@ -80,7 +80,6 @@ function validateUsername(username) {
   if (username.length < 3) {
     return false;
   }
-
   // count unique chars
   var uniqueChars = new Set(username);
   return uniqueChars.size >= 2;
