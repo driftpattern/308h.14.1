@@ -77,7 +77,13 @@ function validateLogin(event) {
 // three validators (username, pw and email)
 function validateUsername(username) {
   // username validation here
-  return username.length >= 3;
+  if (username.length < 3) {
+    return false;
+  }
+
+  // count unique chars
+  var uniqueChars = new Set(username);
+  return uniqueChars.size >= 2;
 }
 
 
@@ -90,8 +96,8 @@ function validatePassword(password) {
 
 
 function validateEmail(email) {
-  var emailRegex = /^\S+@\S+\.\S+$/;
-  var domainRegex = /example\.com$/i;
+  var emailRegex = /^\S+@\S+\.\S+$/;      // must be an email address
+  var domainRegex = /example\.com$/i;     // may not contain "example.com"
   return emailRegex.test(email) && !domainRegex.test(email);
 }
 
